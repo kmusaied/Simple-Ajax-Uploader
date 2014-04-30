@@ -5,6 +5,7 @@
  *
  * Copyright 2012-2013 LPology, LLC
  * Released under the MIT license
+ * Modified by Khaled Musaied (kmusaied)
  */
 
 ;(function( window, document, undefined ) {
@@ -932,7 +933,7 @@ ss.SimpleUpload.prototype = {
 
     var form = document.createElement('form'),
         url = this._opts.url;
-
+ 
     form.method = 'post';
     form.encoding = 'multipart/form-data'; // IE
     form.enctype = 'multipart/form-data';
@@ -1054,7 +1055,7 @@ ss.SimpleUpload.prototype = {
         cancel;
 
     // Add name property to query string
-    params[opts.name] = filename;
+    //params[opts.name] = filename;
 
     // We get the any additional data here after startXHR()
     // in case the data was changed with setData() prior to submitting
@@ -1062,7 +1063,7 @@ ss.SimpleUpload.prototype = {
 
     // Build query string while preserving any existing parameters
     queryURL = opts.url + ( ( opts.url.indexOf( '?' ) > -1 ) ? '&' : '?' ) + ss.obj2string( params );
-
+   // queryURL = opts.url;
     // Inject file size into size box
     if ( sizeBox ) {
       sizeBox.innerHTML = size + 'K';
@@ -1166,6 +1167,7 @@ ss.SimpleUpload.prototype = {
 
     xhr.setRequestHeader( 'X-Requested-With', 'XMLHttpRequest' );
     xhr.setRequestHeader( 'X-File-Name', encodeURIComponent( filename ) );
+    //xhr.setRequestHeader("X-File", this._file);
 
     if ( opts.responseType.toLowerCase() == 'json' ) {
       xhr.setRequestHeader( 'Accept', 'application/json, text/javascript, */*; q=0.01' );
