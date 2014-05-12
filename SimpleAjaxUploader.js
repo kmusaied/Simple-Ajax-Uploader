@@ -5,7 +5,7 @@
  *
  * Copyright 2012-2013 LPology, LLC
  * Released under the MIT license
- * Modified by Khaled Musaied (kmusaied)
+ * Modified by Khaled Musaied (https://github.com/kmusaied)
  */
 
 ;(function( window, document, undefined ) {
